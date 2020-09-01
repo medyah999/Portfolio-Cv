@@ -1,0 +1,278 @@
+// Import
+@import "https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap";
+
+// Variables
+
+$whiteColor: #fff;
+$blackColor: #000;
+$mainFont: "Roboto Condensed";
+$blueColorPrimary: #00a8ff;
+$blueColorSecondary: #2196f3b3;
+
+// Global Rules
+
+.divider_container {
+  background-color: #6a6a6a;
+  width: 70px;
+  height: 1px;
+  margin: 25px auto;
+  position: relative;
+  .divider_inner {
+    width: 70%;
+    height: 3px;
+    background-color: $blueColorPrimary;
+    position: absolute;
+    left: 50%;
+    top: -1px;
+    transform: translateX(-50%);
+  }
+}
+
+.header {
+  height: 100vh;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 50px;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .navbar-light {
+    position: fixed;
+    width: 100%;
+    transition: 0.5s;
+    &.fixed {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),
+        0 2px 5px 0 rgba(0, 0, 0, 0.2);
+      background-color: $whiteColor;
+      padding: 15px 0;
+      z-index: 554;
+      .navbar-nav {
+        .nav-link {
+          color: $blueColorSecondary;
+        }
+      }
+      .navbar-brand {
+        color: $blackColor;
+      }
+      .navbar-toggler {
+        .navbar-toggle {
+          background-color: $blueColorPrimary;
+        }
+      }
+    }
+    .navbar-brand {
+      color: $whiteColor;
+      font-family: $mainFont;
+      font-size: 30px;
+    }
+    .navbar-nav {
+      .nav-link {
+        color: $whiteColor;
+        font-family: $mainFont;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 25px;
+        transition: 0.5s;
+        &:hover {
+          color: $blueColorPrimary;
+        }
+      }
+      button {
+        background-color: $blueColorSecondary;
+        font-weight: 600;
+        border: none;
+        color: $whiteColor;
+        border-radius: 50px;
+        padding: 8px 20px;
+        outline: none;
+        font-family: $mainFont;
+        transition: 0.5s;
+        &:hover {
+          background-color: $blueColorPrimary;
+        }
+      }
+    }
+    .navbar-toggler {
+      border: none;
+      .navbar-toggle {
+        width: 25px;
+        height: 2px;
+        display: block;
+        background-color: $whiteColor;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .header_content {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    .content {
+      color: $whiteColor;
+      font-family: $mainFont;
+    }
+  }
+  .show_more {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    i {
+      background-color: $whiteColor;
+      padding: 15px;
+      border-radius: 50%;
+      color: $blueColorPrimary;
+      cursor: pointer;
+      animation: bounce 1s infinite linear;
+      position: relative;
+    }
+  }
+}
+
+.about {
+  .about_content {
+    margin: 60px 0;
+    padding: 20px 40px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    .img_content {
+      margin: 30px auto;
+      width: 150px;
+      height: 150px;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),
+        0 2px 5px 0 rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_info {
+      .info_item {
+        margin: 10px;
+        .title {
+          font-weight: 600;
+        }
+      }
+      .progress_bar {
+        margin-bottom: 50px;
+        img {
+          width: 50px;
+          border-radius: 50%;
+        }
+        .title {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .progress_bar_inner {
+          position: relative;
+          width: 70%;
+          background-color: #ccc;
+          height: 15px;
+          margin: auto;
+          border-radius: 5px;
+          overflow: hidden;
+          .progress_count {
+            width: 0%;
+            background-color: $blueColorSecondary;
+            position: absolute;
+            .value {
+              position: relative;
+              top: -6px;
+              color: $whiteColor;
+              font-weight: 400;
+              font-weight: $mainFont;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-form {
+  position: fixed;
+  z-index: 555;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  form {
+    background-color: $whiteColor;
+    z-index: 5555;
+    padding: 50px;
+    position: relative;
+    top: 50px;
+  }
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -5;
+  }
+  textarea {
+    resize: none;
+    height: 150px;
+  }
+  input[type="submit"] {
+    font-weight: 400;
+    border-radius: 50px;
+    font-family: $mainFont;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: $blueColorPrimary;
+    color: $whiteColor;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transform: rotateZ(90deg);
+    }
+  }
+}
+
+// Animation
+
+@keyframes bounce {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 20px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
